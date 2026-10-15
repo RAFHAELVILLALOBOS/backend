@@ -14,3 +14,8 @@ export const updateBook = async (book) => {
     const updatedRows = await bookModels.update(book);
     return updatedRows;
 }
+
+export const deleteBook = async (id) => {
+    const deletedBook = await bookModels.remove(id);
+    return deletedBook;
+}
