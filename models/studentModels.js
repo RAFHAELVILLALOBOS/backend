@@ -4,6 +4,17 @@ export const fetchAllStudents = async () => {
  const [rows] = await pool.query('SELECT * FROM student');
  return rows;
 };
+//
+export const findStudentByNameAndSrcodeAndProgram = async (student) => {
+  const [rows] = await pool.query('SELECT * FROM student WHERE name = ? AND srcode = ? AND program = ?', 
+    [student.name, student.srcode, student.program]
+  );
+  return rows;
+};
+export const findStudentById = async (id) => {
+  const [rows] = await pool.query('SELECT * FROM student WHERE id = ?', [id]);
+  return rows;
+};
 
 //insert
 export const insertStudent = async (student) => {

@@ -36,8 +36,8 @@ export const updateBook = async (req, res) => {
         });
     } catch (e) {
         console.log(e);
-        res.status(e.statusCode).json({
-            error: e.message
+        res.status(500).json({
+            error: "Internal Server Error"
         });
     }
 }
